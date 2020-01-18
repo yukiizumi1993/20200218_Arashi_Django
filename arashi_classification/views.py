@@ -8,7 +8,7 @@ from tensorflow.keras.preprocessing.image import array_to_img, img_to_array, loa
 from tensorflow.python.saved_model import tag_constants
 
 #学習モデルのロード
-model = tf.keras.models.load_model('model_arashi_classification.h5')
+model = tf.keras.models.load_model('/home/yukzum/yukzum.pythonanywhere.com/model_arashi_classification.h5')
 
 def predict(input):
     result = model.predict(input)
