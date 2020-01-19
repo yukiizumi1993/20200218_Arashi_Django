@@ -4,11 +4,13 @@ import numpy as np
 import base64
 import tensorflow as tf
 import os
+import keras
 from tensorflow.keras.preprocessing.image import array_to_img, img_to_array, load_img
 from tensorflow.python.saved_model import tag_constants
 
 #学習モデルのロード
-model = tf.keras.models.load_model('/home/yukzum/yukzum.pythonanywhere.com/model_arashi_classification3.h5')
+#model = tf.keras.models.load_model('/home/yukzum/yukzum.pythonanywhere.com/model_arashi_classification3.h5')
+model = keras.models.load_model('/home/yukzum/yukzum.pythonanywhere.com/model_arashi_classification4.h5')
 
 def predict(input):
     result = model.predict(input)
