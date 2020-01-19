@@ -20,3 +20,4 @@ termcolor==1.1.0
 tf-estimator-nightly==1.14.0.dev2019030115
 Werkzeug==0.16.0
 theano==1.0.4
+keras==2.3.1
