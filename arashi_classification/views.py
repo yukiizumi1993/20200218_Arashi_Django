@@ -2,15 +2,23 @@ from django.shortcuts import render, redirect
 from PIL import Image
 import numpy as np
 import base64
-#import tensorflow as tf
+import tensorflow
 import os
 import keras
+from keras.models import load_model
+from keras.utils import CustomObjectScope
+from keras.initializers import glorot_uniform
 from keras.preprocessing.image import array_to_img, img_to_array, load_img
 #from tensorflow.python.saved_model import tag_constants
 
 #学習モデルのロード
 #model = tf.keras.models.load_model('/home/yukzum/yukzum.pythonanywhere.com/model_arashi_classification3.h5')
-model = keras.models.load_model('/home/yukzum/yukzum.pythonanywhere.com/model_arashi_classification4.h5')
+#model = keras.models.load_model('/home/yukzum/yukzum.pythonanywhere.com/model_arashi_classification4.h5')
+#model = keras.models.load_model('model_arashi_classification4.h5')
+with CustomObjectScope({'GlorotUniform': glorot_uniform()}):
+        model = load_model('model_arashi_classification6.h5')
+
+
 
 def predict(input):
     result = model.predict(input)
@@ -40,7 +48,7 @@ def upload(request):
         fruits=["相葉雅紀", "松本潤", "二宮和也", "大野智", "櫻井翔"]
         for file in files:
             Z=[]
-            img = img_to_array(load_img(file, target_size=(200, 200)))
+            img = img_to_array(load_img(file, target_size=(100, 100)))
             Z.append(img)
             Z = np.asarray(Z)
             Z = Z / 255.0
