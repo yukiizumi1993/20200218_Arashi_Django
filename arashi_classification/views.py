@@ -15,7 +15,7 @@ from keras.preprocessing.image import array_to_img, img_to_array, load_img
 #model = keras.models.load_model('/home/yukzum/yukzum.pythonanywhere.com/model_arashi_classification4.h5')
 #model = keras.models.load_model('model_arashi_classification4.h5')
 with CustomObjectScope({'GlorotUniform': glorot_uniform()}):
-        model = load_model('model_arashi_classification6.h5')
+        model = load_model('/home/yukzum/yukzum.pythonanywhere.com/model_arashi_classification6.h5')
 
 
 
