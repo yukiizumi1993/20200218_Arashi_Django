@@ -13,7 +13,7 @@ Pillow==7.0.0
 protobuf==3.11.2
 pytz==2019.3
 six==1.14.0
-sqlparse==0.3.0
+sqlparse==0.4.4
 tb-nightly==1.14.0a20190301
 tensorflow==2.0.0a0
 termcolor==1.1.0
